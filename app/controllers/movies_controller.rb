@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
 
  private
 
-  def set_restaurant
+  def set_movie
     @movie = Movie.find(params[:id])
   end
 
