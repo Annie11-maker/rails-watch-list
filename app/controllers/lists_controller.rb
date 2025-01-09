@@ -1,12 +1,10 @@
 class ListsController < ApplicationController
-
-  before_action :set_list, only: [:show ]
+  before_action :set_list, only: [:show]
   def index
     @lists = List.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @list = List.new
@@ -17,7 +15,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
